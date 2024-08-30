@@ -1,4 +1,4 @@
-## ScriptOrchestrator: A Powerful Script Manager for Web Browsers [This is WIP]
+## ScriptOrchestrator: A Powerful Script Manager for Web Browsers
 
 **ScriptOrchestrator** is a JavaScript library designed to simplify and streamline script management within web browsers. It acts as a one-stop solution for loading and executing both inline and external scripts, offering a structured and efficient approach.
 
@@ -11,14 +11,7 @@
 * **Flexible Script Configuration:** Customize script behavior by attaching attributes and defining timeouts for external scripts.
 
 ### Installation
-
-**ScriptOrchestrator** can be installed via NPM:
-
-```bash
-Yet to update!
-```
-
-**Alternatively, you can use a CDN link:**
+**ScriptOrchestrator** can be used via a CDN link:
 
 ```
 https://cdn.jsdelivr.net/gh/homeboy445/ScriptOrchestrator@main/release/bundle.js
@@ -88,6 +81,31 @@ This command initiates the script execution process based on the defined configu
 
 ```javascript
 const mainInitConfig = scriptOrch.default({ stateFull: false });
+```
+
+### Usage example
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./dist/bundle.js"></script>
+    <script>
+        const handler = scriptOrch.default()
+        handler.scripts.add().src("URL1");
+        handler.scripts.add().src("URL2");
+        handler.scripts.add().inlineCode("console.log('js code!')");
+        handler.scripts.add().src("URL3");
+        handler.run()
+    </script>
+    <!-- The rest of the page's resources! -->
+</head>
+<body>
+    <h1>This is a test page!</h1>
+</body>
+</html>
 ```
 
 ### API Reference
