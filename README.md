@@ -77,7 +77,7 @@ This command initiates the script execution process based on the defined configu
 
 ### Advanced Configuration
 
-* **Stateful Mode:** By default, ScriptOrchestrator maintains an internal queue for script data. To disable this behavior and manage scripts externally, set the `stateFull` property to `false` during initialization:
+* **Stateful Mode:** By default, ScriptOrchestrator maintains an in-memory queue for maintaining the script list. To disable this behavior and avoid storing any data in-memory simply, set the `stateFull` property to `false` during initialization:
 
 ```javascript
 const mainInitConfig = scriptOrch.default({ stateFull: false });
