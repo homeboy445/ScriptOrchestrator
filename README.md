@@ -97,7 +97,7 @@ const mainInitConfig = scriptOrch.default({ stateFull: false });
         handler.scripts.add().src("URL1");
         handler.scripts.add().src("URL2");
         handler.scripts.add().inlineCode("console.log('js code!')");
-        handler.scripts.add().src("URL3");
+        handler.scripts.add(({ priority: 2 })).src("URL3");
         handler.run()
     </script>
     <!-- The rest of the page's resources! -->
